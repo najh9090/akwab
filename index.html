@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="logo.png" />
+  <title>Akwab | أكواب مخصصة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: #f5f0e6;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-container img {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    .logo-container h1 {
+      font-size: 1.8em;
+      margin: 0;
+      color: #333;
+    }
+
+    .burger {
+      font-size: 2em;
+      cursor: pointer;
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1em;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px 40px;
+    }
+
+    .hero img {
+      max-width: 300px;
+      width: 80%;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin-top: 20px;
+      color: #444;
+    }
+
+    .section {
+      padding: 80px 20px 40px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 20px 30px;
+      border-radius: 12px;
+      font-size: 1.1em;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .products {
+      text-align: center;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      max-width: 300px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin-top: 15px;
+      font-size: 1.2em;
+    }
+
+    .whatsapp-btn {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 40px auto;
+    }
+
+    .notice {
+      color: #f44336;
+      font-size: 1.2em;
+      margin-top: 30px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #eee;
+      color: #555;
+      padding: 40px 20px;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 0.9em;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 10px;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .burger {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo">
+      <h1>Akwab</h1>
+    </div>
+    <div class="burger" onclick="toggleMenu()">☰</div>
+    <nav id="menu">
+      <a href="#products">المنتجات</a>
+      <a href="#features">طرق الدفع</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p>كوّبها على طريقتك ☕</p>
+  </section>
+
+  <section id="features" class="section">
+    <h2 style="text-align:center;">طرق الدفع</h2>
+    <div class="features">
+      <div class="feature">✅ الدفع عند الاستلام داخل الإمارات</div>
+      <div class="feature">💳 الدفع الإلكتروني عبر PayPal</div>
+    </div>
+  </section>
+
+  <section id="products" class="section products">
+    <h2>منتجاتنا</h2>
+    <div class="product-card">
+      <img src="hubakkhatir.jpg" alt="Product 1">
+      <h3>كوب حبك خطييير</h3>
+      <p1>60درهم</p1>
+        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
+  <p id="notice" class="notice"></p>
+
+    </div>
+
+        <div class="product-card">
+      <img src="areyouhere.jpg" alt="Product 1">
+      <h3>كوب الجود للموجود</h3>
+      <p1>60درهم</p1>
+        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
+  <p id="notice" class="notice"></p>
+
+    </div>
+        <div class="product-card">
+      <img src="qhwa.jpg" alt="Product 1">
+      <h3>كوب روقان تركي</h3>
+      <p1>60درهم</p1>
+        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
+  <p id="notice" class="notice"></p>
+
+    </div>
+  </section>
+
+  <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
+  <p id="notice" class="notice"></p>
+
+  <footer id="contact">
+    <h3>تواصل معنا</h3>
+    <p>جميع الحقوق محفوظة © Akwab 2025</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+
+    fetch("https://ipapi.co/json")
+      .then(res => res.json())
+      .then(data => {
+        if (data.country_code === "AE") {
+          document.getElementById("whatsappBtn").classList.remove("hidden");
+        } else {
+          document.getElementById("notice").textContent = "هذه الخدمة متوفرة داخل الإمارات فقط 🇦🇪";
+        }
+      })
+      .catch(() => {
+        document.getElementById("notice").textContent = "تعذر تحديد موقعك. الخدمة متاحة فقط داخل الإمارات.";
+      });
+  </script>
+
+</body>
+</html>
