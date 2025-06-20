@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" type="image/png" href="logo.png" />
   <title>Akwab | أكواب مخصصة</title>
+  <meta name="description" content="اكتشف تشكيلتنا من الأكواب المصممة باحتراف مع توصيل داخل الإمارات وخيارات دفع مريحة. كوبك على كيفك مع Akwab." />
+  <meta name="keywords" content="أكواب مخصصة, أكواب هدايا, كوب قهوة تصميم, كوب حراري الإمارات, Akwab mugs" />
+  <meta name="author" content="Akwab" />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -122,6 +125,11 @@
       font-size: 1.2em;
     }
 
+    .product-card p {
+      font-size: 1em;
+      margin: 10px 0;
+    }
+
     .whatsapp-btn {
       background-color: #25D366;
       color: white;
@@ -132,13 +140,13 @@
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      margin: 40px auto;
+      margin: 20px auto 10px;
     }
 
     .notice {
       color: #f44336;
       font-size: 1.2em;
-      margin-top: 30px;
+      margin-top: 10px;
       font-weight: bold;
       text-align: center;
     }
@@ -152,7 +160,6 @@
       font-size: 0.9em;
     }
 
-    /* Responsive */
     @media (max-width: 768px) {
       nav {
         display: none;
@@ -179,7 +186,7 @@
 
   <header>
     <div class="logo-container">
-      <img src="logo.png" alt="Logo">
+      <img src="logo.png" alt="Akwab logo">
       <h1>Akwab</h1>
     </div>
     <div class="burger" onclick="toggleMenu()">☰</div>
@@ -205,34 +212,24 @@
   <section id="products" class="section products">
     <h2>منتجاتنا</h2>
     <div class="product-card">
-      <img src="hubakkhatir.jpg" alt="Product 1">
+      <img src="hubakkhatir.jpg" alt="كوب حبك خطييير">
       <h3>كوب حبك خطييير</h3>
-      <p1>109درهم</p1>
-        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
-  <p id="notice" class="notice"></p>
-
+      <p>109 درهم</p>
+      <a href="https://wa.me/971509900260" class="whatsapp-btn" target="_blank">اطلب الآن عبر واتساب</a>
     </div>
-
-        <div class="product-card">
-      <img src="areyouhere.jpg" alt="Product 1">
+    <div class="product-card">
+      <img src="areyouhere.jpg" alt="كوب الجود للموجود">
       <h3>كوب الجود للموجود</h3>
-      <p1>درهم109</p1>
-        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
-  <p id="notice" class="notice"></p>
-
+      <p>109 درهم</p>
+      <a href="https://wa.me/971509900260" class="whatsapp-btn" target="_blank">اطلب الآن عبر واتساب</a>
     </div>
-        <div class="product-card">
-      <img src="qhwa.jpg" alt="Product 1">
+    <div class="product-card">
+      <img src="qhwa.jpg" alt="كوب روقان تركي">
       <h3>كوب روقان تركي</h3>
-      <p1>109درهم</p1>
-        <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
-  <p id="notice" class="notice"></p>
-
+      <p>109 درهم</p>
+      <a href="https://wa.me/971509900260" class="whatsapp-btn" target="_blank">اطلب الآن عبر واتساب</a>
     </div>
   </section>
-
-  <a id="whatsappBtn" href="https://wa.me/971509900260" class="whatsapp-btn hidden" target="_blank">اطلب الآن عبر واتساب</a>
-  <p id="notice" class="notice"></p>
 
   <footer id="contact">
     <h3>تواصل معنا</h3>
@@ -243,19 +240,6 @@
     function toggleMenu() {
       document.getElementById("menu").classList.toggle("show");
     }
-
-    fetch("https://ipapi.co/json")
-      .then(res => res.json())
-      .then(data => {
-        if (data.country_code === "AE") {
-          document.getElementById("whatsappBtn").classList.remove("hidden");
-        } else {
-          document.getElementById("notice").textContent = "هذه الخدمة متوفرة داخل الإمارات فقط 🇦🇪";
-        }
-      })
-      .catch(() => {
-        document.getElementById("notice").textContent = "تعذر تحديد موقعك. الخدمة متاحة فقط داخل الإمارات.";
-      });
   </script>
 
 </body>
